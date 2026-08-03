@@ -9,8 +9,7 @@ description: Keep up with the latest product updates, releases, and feature enha
 > Every Tuesday, the current week's updates are grouped into a weekly release section.
 
 ## Auto-generated release notes
-- This section receives automated updates
-
+- **[#21](https://github.com/Venkat4real/Documentation-Portfolio/pull/21)** - Added OpenAI Codex terminal guide *by @Venkat4real, merged 2026-08-03.*
 ## Release Update - Week of 2026-07-14 to 2026-07-21
 
 - **[#20](https://github.com/Venkat4real/Documentation-Portfolio/pull/20)** - Removed the samples files and corrected typos in guides. *by @Venkat4real, merged 2026-07-20.*
