@@ -12,6 +12,7 @@ description: Keep up with the latest product updates, releases, and feature enha
 > The changes deployed to Repo without a PR merge will not be recorded in the Automated Release Notes.
 
 ## Auto-generated release notes
+- **[#13](https://github.com/Venkat4real/Documentation-Portfolio/pull/13)** - Update release notes with deployment information *by @Venkat4real, merged 2026-08-03.*
 - **[#21](https://github.com/Venkat4real/Documentation-Portfolio/pull/21)** - Added OpenAI Codex terminal guide *by @Venkat4real, merged 2026-08-03.*
 ## Release Update - Week of 2026-07-14 to 2026-07-21
 
