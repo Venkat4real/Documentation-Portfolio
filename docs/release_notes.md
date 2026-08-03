@@ -8,6 +8,9 @@ description: Keep up with the latest product updates, releases, and feature enha
 > The site is deployed immediately upon PR merge, ensuring documentation stays in sync with code.
 > Every Tuesday, the current week's updates are grouped into a weekly release section.
 
+> [!NOTE]
+> The changes deployed to Repo without a PR merge will not be recorded in the Automated Release Notes.
+
 ## Auto-generated release notes
 - **[#21](https://github.com/Venkat4real/Documentation-Portfolio/pull/21)** - Added OpenAI Codex terminal guide *by @Venkat4real, merged 2026-08-03.*
 ## Release Update - Week of 2026-07-14 to 2026-07-21
