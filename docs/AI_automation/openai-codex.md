@@ -1,3 +1,8 @@
+---
+layout: docs
+title: AI and Automation Index
+description: This page lists AI and automation projects.
+---
 # Use OpenAI Codex in the Terminal and Push Code to GitHub
 
 ## Overview
