@@ -9,10 +9,15 @@ description: Keep up with the latest product updates, releases, and feature enha
 > Every Tuesday, the current week's updates are grouped into a weekly release section.
 
 ## Auto-generated release notes
+- This section receives automated updates
+
+## Release Update - Week of 2026-07-28 to 2026-08-04
+
 - **[#22](https://github.com/Venkat4real/Documentation-Portfolio/pull/22)** - Office laptop *by @Venkat4real, merged 2026-08-04.*
 - **[#18](https://github.com/Venkat4real/Documentation-Portfolio/pull/18)** - Updated link of the automated release notes document *by @Venkat4real, merged 2026-07-16.*
 - **[#17](https://github.com/Venkat4real/Documentation-Portfolio/pull/17)** - Office laptop *by @Venkat4real, merged 2026-07-16.*
 - **[#16](https://github.com/Venkat4real/Documentation-Portfolio/pull/16)** - Added article about automated release notes *by @Venkat4real, merged 2026-07-15.*
+
 ## Release Update - Week of 2026-07-07 to 2026-07-14
 
 - This section receives automated updates. The bot collects all changes made throughout the week and stores them here.
