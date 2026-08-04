@@ -6,7 +6,7 @@ const mode = process.argv[2];
 const repo = process.env.GITHUB_REPOSITORY;
 const token = process.env.GITHUB_TOKEN;
 const eventPath = process.env.GITHUB_EVENT_PATH;
-const releasePath = path.resolve(__dirname, '../../docs/release_notes.md');
+const releasePath = path.resolve(__dirname, '../../docs/internal_release_notes.md');
 
 if (!['pr', 'weekly'].includes(mode)) {
   console.error('Usage: node update-release-notes.js <pr|weekly>');

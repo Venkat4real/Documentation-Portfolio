@@ -42,7 +42,7 @@ If a PR is merged, the workflow runs in PR mode and adds the PR to the release n
 
 ### Step 4: Commit and push
 
-Configures Git as the GitHub Actions bot, stages the updated `docs/release_notes.md`, commits the changes, and pushes them to main. The workflow silently skips this step when no changes occur.
+Configures Git as the GitHub Actions bot, stages the updated `docs/internal_release_notes.md`, commits the changes, and pushes them to main. The workflow silently skips this step when no changes occur.
 
 ## The flow
 
