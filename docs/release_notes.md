@@ -18,6 +18,8 @@ Stay up to date with the latest product features, improvements, bug fixes, and d
 
 ### 📚 Documentation
 
+### AI
+
 - Added a new guide to use Codex in the terminal.
 
 ---
