@@ -13,3 +13,4 @@ description: This page lists AI and automation projects.
 
 <!--
 <li><strong><a href="./Using_AI_Agents_for_Technical Writing.html">Release Notes</a></strong> - See the latest updates and feature changelog.</li>
+-->
