@@ -9,7 +9,7 @@ description: This page lists AI and automation projects.
 
 This guide explains how to install, sign in to, and use OpenAI Codex from the terminal.
 
-![Codex_in_terminal](image-3.png)
+<img src="image-3.png" alt="Codex_in_terminal" width="400">
 
 ------------------------------------------------------------------------
 
