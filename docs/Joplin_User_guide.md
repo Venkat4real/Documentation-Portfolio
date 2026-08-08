@@ -85,7 +85,7 @@ Joplin uses Markdown for formatting notes. Common syntax includes:
 
 The following screen shows the sync options available in Joplin:
 
-- **Joplin Cloud**: The native, fully integrated sync service optimized for notes and Joplin-specific features. Click [here](https://joplinapp.org/plans/) to learn more about Joplin Cloud.
+- **Joplin Cloud**: The native, fully integrated sync service optimized for notes and Joplin-specific features. Click [Joplin](https://joplinapp.org/plans/) to learn more about Joplin Cloud.
 - **Dropbox**: a general cloud storage provider that syncs your Joplin note files across devices.
 - **OneDrive**: Microsoft’s cloud storage service, also used to sync Joplin note files between devices.
 
