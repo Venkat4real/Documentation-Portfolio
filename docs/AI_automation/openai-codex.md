@@ -121,8 +121,6 @@ For more information about working with Git and GitHub, see your organization's 
 
 ## Troubleshooting
 
-  -----------------------------------------------------------------------;
-
   | Issue | Resolution |
   | :-- | :-- |
   | Command not found | Verify installation and PATH |
@@ -132,8 +130,6 @@ For more information about working with Git and GitHub, see your organization's 
   | Push rejected | Pull the latest changes, resolve conflicts and push again. |
 
   | Permission denied | Verify repository permissions and remote URL. |
-
-  -----------------------------------------------------------------------:
 
 ------------------------------------------------------------------------
 
