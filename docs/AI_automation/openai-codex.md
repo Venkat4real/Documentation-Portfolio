@@ -4,20 +4,21 @@
 
 This guide explains how to install, sign in to, and use OpenAI Codex from the terminal.
 
+![Codex_in_terminal](image-3.png)
+
 ------------------------------------------------------------------------
 
-> [!NOTE]
-> To use OpenAI Codex in the terminal, you need an active OpenAI subscription that includes access to Codex features. If you use API key authentication, make sure your OpenAI account has API access enabled.
+> Note: To use OpenAI Codex in the terminal, you need an active OpenAI subscription that includes access to Codex features. If you use API key authentication, make sure your OpenAI account has API access enabled.
 
 ## Prerequisites
 
 Before you begin, make sure that you have:
 
--   Git installed.
--   Node.js installed.
--   A GitHub account.
--   An OpenAI account or API key.
--   A project folder.
+-Git installed.
+-Node.js installed.
+-A GitHub account.
+-An OpenAI account or API key.
+-A project folder.
 
 Verify your tools:
 
@@ -82,9 +83,7 @@ Add input validation.
 
 Fix failing tests.
 
-Refactor this function.
-
-Generate unit tests.
+Generate test case.
 ```
 
 Review every proposed change before accepting it.
@@ -98,6 +97,7 @@ Run your project's tests.
 ```bash
 npm test
 ```
+
 or
 
 ```bash
@@ -116,29 +116,28 @@ For more information about working with Git and GitHub, see your organization's 
 
 ## Troubleshooting
 
-  -----------------------------------------------------------------------
-  Issue                      Resolution
-  -------------------------- --------------------------------------------
-  Command not found          Verify installation and PATH.
+  -----------------------------------------------------------------------;
 
-  Authentication failed      Verify your API key or sign in again.
+  | Issue | Resolution |
+  | :-- | :-- |
+  | Command not found | Verify installation and PATH |
 
-  Push rejected              Pull the latest changes, resolve conflicts,
-                             and push again.
+  | Authentication failed | Verify your API key or sign in again |
 
-  Permission denied          Verify repository permissions and remote
-                             URL.
-  -----------------------------------------------------------------------
+  | Push rejected | Pull the latest changes, resolve conflicts and push again. |
+
+  | Permission denied | Verify repository permissions and remote URL. |
+
+  -----------------------------------------------------------------------:
 
 ------------------------------------------------------------------------
 
 ## Best Practices
 
--   Review generated code.
--   Run tests before every commit.
--   Use descriptive commit messages.
--   Keep commits small.
--   Never commit secrets.
+-Review generated code.
+-Run tests before every commit.
+-Use descriptive commit messages.
+-Keep commits small.
+-Never commit secrets.
 
 ------------------------------------------------------------------------
-
