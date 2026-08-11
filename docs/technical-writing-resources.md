@@ -12,6 +12,7 @@ description: A collection of technical writing resources from around the world.
  * [Gemini for technical writing](https://medium.com/@helenslattery_87111/4-ways-technical-writers-can-use-their-free-google-ai-assistant-today-e18519e8546d) includes prompts.
  * [Technical Writing blog by Moi Borah - Google](https://medium.com/me/following-feed/writers/f2f0351ca33f)
  * [How I Documented an Entire Product in 4 Days with an AI Agent](https://theaiplatform.app/blog/documenting-product-with-ai-agent)
+ * [Technical Writer Agent](https://github.com/msitarzewski/agency-agents/blob/main/engineering/engineering-technical-writer.md)
 
 ## Learning from the best
 - [Atlassian release notes](https://community.atlassian.com/release-notes)
