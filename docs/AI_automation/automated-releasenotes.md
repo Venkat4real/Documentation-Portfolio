@@ -106,7 +106,7 @@ To run the workflow outside its normal schedule:
 
 Use a manual run to retry a failed automation run or to archive the current entries before the next scheduled Tuesday run. A manual run uses weekly mode, so it creates the same weekly archive as the scheduled run.
 
-![Manual trigger](image-2.png)
+<img src="image-2.png" alt="Manual trigger" width="800">
 
 ## Troubleshooting
 
