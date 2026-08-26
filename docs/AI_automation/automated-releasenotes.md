@@ -75,13 +75,13 @@ Use this pattern where it fits:
 type: concise description of the change
 ```
 
-Common types include `docs`, `feat`, `fix`, `refactor`, `chore`, and `test`.
+Common types include `docs`, `feat`, `fix`, and `test`.
 
 | Change | Good commit message or PR title | Avoid |
 | --- | --- | --- |
-| New documentation | `docs: add installation prerequisites` | `updated docs` |
-| Documentation correction | `docs: correct API authentication example` | `fix` |
-| New user-facing capability | `feat: add CSV export to activity reports` | `new feature` |
+| New documentation | `docs: added installation prerequisites` | `updated docs` |
+| Documentation correction | `docs: corrected API authentication example` | `fix` |
+| New user-facing capability | `feat: added CSV export to activity reports` | `new feature` |
 | Bug fix | `fix: prevent duplicate release-note entries` | `bug fixes` |
 | Maintenance work | `chore: update Node.js version in release workflow` | `changes` |
 | Refactoring | `refactor: simplify release-note date formatting` | `cleanup` |
