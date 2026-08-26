@@ -1,10 +1,15 @@
+---
+layout: docs
+title: AI and Automation Index
+description: This page lists AI and automation projects.
+---
 # Use OpenAI Codex in the Terminal and Push Code to GitHub
 
 ## Overview
 
 This guide explains how to install, sign in to, and use OpenAI Codex from the terminal.
 
-![Codex_in_terminal](image-3.png)
+<img src="image-3.png" alt="Codex_in_terminal" width="400">
 
 ------------------------------------------------------------------------
 
@@ -14,11 +19,11 @@ This guide explains how to install, sign in to, and use OpenAI Codex from the te
 
 Before you begin, make sure that you have:
 
--Git installed.
--Node.js installed.
--A GitHub account.
--An OpenAI account or API key.
--A project folder.
+- Git installed.
+- Node.js installed.
+- A GitHub account.
+- An OpenAI account or API key.
+- A project folder.
 
 Verify your tools:
 
@@ -116,28 +121,21 @@ For more information about working with Git and GitHub, see your organization's 
 
 ## Troubleshooting
 
-  -----------------------------------------------------------------------;
-
   | Issue | Resolution |
-  | :-- | :-- |
+  | --- | --- |
   | Command not found | Verify installation and PATH |
-
   | Authentication failed | Verify your API key or sign in again |
-
-  | Push rejected | Pull the latest changes, resolve conflicts and push again. |
-
-  | Permission denied | Verify repository permissions and remote URL. |
-
-  -----------------------------------------------------------------------:
+  | Push rejected | Pull the latest changes, resolve conflicts and push again |
+  | Permission denied | Verify repository permissions and remote URL |
 
 ------------------------------------------------------------------------
 
 ## Best Practices
 
--Review generated code.
--Run tests before every commit.
--Use descriptive commit messages.
--Keep commits small.
--Never commit secrets.
+- Review generated code.
+- Run tests before every commit.
+- Use descriptive commit messages.
+- Keep commits small.
+- Never commit secrets.
 
 ------------------------------------------------------------------------

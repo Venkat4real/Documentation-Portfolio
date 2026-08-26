@@ -34,23 +34,75 @@ function writeReleaseNotes(content) {
   fs.writeFileSync(releasePath, content, 'utf8');
 }
 
-function formatEntry(pr) {
+function getPullRequestFiles(prNumber, page = 1) {
+  const options = {
+    hostname: 'api.github.com',
+    path: `/repos/${repo}/pulls/${prNumber}/files?per_page=100&page=${page}`,
+    headers: {
+      Accept: 'application/vnd.github+json',
+      Authorization: `Bearer ${token}`,
+      'User-Agent': 'release-notes-cycle'
+    }
+  };
+
+  return new Promise((resolve, reject) => {
+    https.get(options, (response) => {
+      let body = '';
+      response.setEncoding('utf8');
+      response.on('data', (chunk) => { body += chunk; });
+      response.on('end', () => {
+        if (response.statusCode < 200 || response.statusCode >= 300) {
+          reject(new Error(`Could not retrieve files for PR #${prNumber}: ${response.statusCode} ${body}`));
+          return;
+        }
+
+        try {
+          resolve(JSON.parse(body));
+        } catch (error) {
+          reject(new Error(`Could not parse changed files for PR #${prNumber}: ${error.message}`));
+        }
+      });
+    }).on('error', reject);
+  });
+}
+
+async function getChangedDocumentationFiles(prNumber) {
+  const files = [];
+  let page = 1;
+
+  while (true) {
+    const pageFiles = await getPullRequestFiles(prNumber, page);
+    files.push(...pageFiles);
+    if (pageFiles.length < 100) break;
+    page += 1;
+  }
+
+  return files.filter((file) =>
+    file.status !== 'removed'
+    && file.filename.startsWith('docs/')
+    && file.filename.endsWith('.md')
+    && file.filename !== 'docs/internal_release_notes.md'
+  );
+}
+
+function formatArticleLinks(files) {
+  return files.map((file) => {
+    const name = path.basename(file.filename, '.md');
+    const url = `https://github.com/${repo}/blob/main/${encodeURI(file.filename)}`;
+    return `[View article: ${name}](${url})`;
+  }).join(' - ');
+}
+
+function formatEntry(pr, articleLinks) {
   const number = pr.number;
   const title = (pr.title || '').replace(/\s+/g, ' ').trim();
   const url = pr.html_url || `https://github.com/${repo}/pull/${number}`;
   const author = pr.user?.login || 'unknown';
   const mergedAt = pr.merged_at ? pr.merged_at.slice(0, 10) : (pr.closed_at ? pr.closed_at.slice(0, 10) : new Date().toISOString().slice(0, 10));
   
-  // Extract article link from PR body
-  let articleLink = '';
-  if (pr.body) {
-    const linkMatch = pr.body.match(/Article:\s*\[.*?\]\((.*?)\)/i);
-    if (linkMatch && linkMatch[1]) {
-      articleLink = ` - [View Article](${linkMatch[1]})`;
-    }
-  }
-  
-  return `- **[#${number}](${url})** - ${title} *by @${author}, merged ${mergedAt}.*${articleLink}`;
+  const articleSuffix = articleLinks ? ` - ${articleLinks}` : '';
+
+  return `- **[#${number}](${url})** - ${title} *by @${author}, merged ${mergedAt}.*${articleSuffix}`;
 }
 
 function insertIntoAutoSection(content, block) {
@@ -102,7 +154,8 @@ async function runPrMode() {
     return;
   }
 
-  const entry = formatEntry(pr);
+  const changedDocumentationFiles = await getChangedDocumentationFiles(pr.number);
+  const entry = formatEntry(pr, formatArticleLinks(changedDocumentationFiles));
   const updated = insertIntoAutoSection(content, entry);
   writeReleaseNotes(updated);
   console.log(`Added PR #${pr.number} to release notes.`);
