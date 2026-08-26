@@ -6,7 +6,7 @@ description: Learn how the release notes workflow records merged pull requests a
 
 ## Automated release notes with GitHub Actions
 
-This repository uses GitHub Actions to generate and [internal release notes](../internal_release_notes.md) . When a pull request (PR) is merged into `main`, the workflow creates an entry from the PR metadata. Each Tuesday, it groups the accumulated entries into a dated weekly section.
+This repository uses GitHub Actions to generate and update the [internal release notes](../internal_release_notes.md) . When a pull request (PR) is merged into `main`, the workflow creates an entry from the PR metadata. Each Tuesday, it groups the accumulated entries into a dated weekly section.
 
 The result is a lightweight release history that is generated from the work already reviewed and merged in GitHub.
 
