@@ -183,12 +183,33 @@ a:hover {
   background: transparent;
   padding: 0;
   border-radius: 0;
+}
 
 .docs-content code {
   color: #d946ef;
   background: #f8fafc;
   padding: 2px 5px;
   border-radius: 6px;
+}
+
+.docs-content table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+}
+
+.docs-content th,
+.docs-content td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid #d1d5db;
+}
+
+.docs-content th {
+  background: #f9fafb;
+  color: #111827;
+  font-weight: 700;
 }
 
 .docs-content img {
