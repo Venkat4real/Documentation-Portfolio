@@ -6,9 +6,9 @@ description: Learn how the release notes workflow records merged pull requests a
 
 ## Automated release notes with GitHub Actions
 
-This repository uses GitHub Actions to generate and update the [internal release notes](../internal_release_notes.md) . When a pull request (PR) is merged into `main`, the workflow creates an entry from the PR metadata. Each Tuesday, it groups the accumulated entries into a dated weekly section.
+This repository uses GitHub Action to generate and update the [internal release notes](../internal_release_notes.md). When a pull request (PR) is merged into `main`, the workflow creates an entry(release notes) from the PR metadata. Each Tuesday, it groups the collected release notes for the week into a dated weekly section. Automated release-note uses the **PR title** as release notes summarry.
 
-The result is a lightweight release history that is generated from the work already reviewed and merged in GitHub.
+The result is a lightweight release notes that is generated from the work already reviewed and merged in GitHub.
 
 ## Components
 
@@ -16,15 +16,15 @@ The result is a lightweight release history that is generated from the work alre
 | --- | --- | --- |
 | GitHub Actions workflow | `.github/workflows/release-notes-cycle.yml` | Starts the automation, runs the script, and commits an updated release-notes file. |
 | Update script | `.github/scripts/update-release-notes.js` | Formats PR details, adds entries, and creates the weekly archive. |
-| Release-notes file | `docs/internal_release_notes.md` | Contains the current auto-generated section and archived weekly sections. |
+| Release-notes file | `docs/internal_release_notes.md` | Contains the current auto-generated section and archived weekly release notes. |
 
 ## Workflow triggers
 
 The **Release Notes Cycle** workflow runs in the following situations:
 
-- **Merged PR:** A PR targeting `main` is closed and merged. Closed PRs that are not merged are ignored.
+- **Merged PR:** When a PR targeting `main` is closed and merged. Closed PRs that are not merged are ignored.
 - **Weekly schedule:** Every Tuesday at 9:00 AM UTC.
-- **Manual run:** A repository maintainer starts the workflow from the Actions tab.
+- **Manual run:** When a repository maintainer starts the workflow from the Actions tab.
 
 ## How the workflow works
 
@@ -32,12 +32,12 @@ The **Release Notes Cycle** workflow runs in the following situations:
 
 GitHub starts the workflow after a PR is merged into `main`. The workflow checks out `main`, installs Node.js, and runs the update script in `pr` mode.
 
-The script reads the PR number, title, author, merge date, and URL. It then adds an entry under **Auto-generated release notes** in `docs/internal_release_notes.md`.
+The script reads the PR number, title, author, merge date, and URL. It then adds a release notes under **Auto-generated release notes** in `docs/internal_release_notes.md`.
 
-For example, a merged PR titled `docs: add troubleshooting steps for sign-in` produces an entry similar to:
+For example, a merged PR titled `docs: Added troubleshooting steps for sign-in` produces an entry similar to:
 
 ```markdown
-- **[#42](https://github.com/OWNER/REPOSITORY/pull/42)** - docs: add troubleshooting steps for sign-in *by @octocat, merged 2026-08-16.*
+- **[#42](https://github.com/OWNER/REPOSITORY/pull/42)** - docs: added troubleshooting steps for sign-in *by @octocat, merged 2026-08-16.*
 ```
 
 If the PR description includes an article link in this format, the entry also includes a **View Article** link:
@@ -48,13 +48,25 @@ Article: [Sign-in troubleshooting](https://example.com/docs/sign-in-troubleshoot
 
 The script skips a PR that is already recorded, so re-running the workflow does not create a duplicate entry.
 
-### 2. The workflow commits the update
+### 2. Manual Trigger
 
-If the script changes the release-notes file, GitHub Actions commits and pushes the update to `main` as `github-actions[bot]`. If there is nothing new to write, the commit step completes without creating a commit.
+Users can manuallt tigger the release notes workflow if some release the bot doesn't work after the mearge.
+
+To run the workflow outside its normal schedule:
+
+1. Open the repository on GitHub.
+2. Select **Actions**.
+3. Select **Release Notes Cycle** from the workflow list.
+4. Select **Run workflow** and confirm the branch.
+5. Choose **Run workflow**.
+
+Use a manual run to retry a failed automation run or to archive the current entries before the next scheduled Tuesday run. A manual run uses weekly mode, so it creates the same weekly archive as the scheduled run.
+
+<img src="image-2.png" alt="Manual trigger" width="800">
 
 ### 3. The weekly run archives the entries
 
-On Tuesday, the workflow runs the script in `weekly` mode. It moves the entries currently under **Auto-generated release notes** into a new section named with the preceding seven-day date range, then restores an empty auto-generated section.
+On Tuesday, the workflow runs the script in `weekly` mode. It moves the release notes currently under **Auto-generated release notes** into a new section named with the preceding seven-day date range, then restores an empty auto-generated section.
 
 ```text
 PR merged → entry added to Auto-generated release notes
@@ -67,12 +79,12 @@ If no PR entries have been added since the previous archive, the weekly run make
 
 ## Writing useful commit messages and PR titles
 
-The generated release-note entry uses the **PR title**, not the individual commit messages. Write the PR title as a concise, reader-friendly summary of the change. Clear commit messages are still valuable for code review and troubleshooting, and using a consistent style makes both easier to scan.
+The automated release-note uses the **PR title**, not the individual commit messages. Write the PR title as a concise, reader-friendly summary of the change. Clear commit messages are still valuable for code review and troubleshooting, and using a consistent style makes both easier to scan.
 
 Use this pattern where it fits:
 
 ```text
-type: concise description of the change
+type: concise description of the change : Article [link]
 ```
 
 Common types include `docs`, `feat`, `fix`, and `test`.
@@ -89,24 +101,10 @@ Common types include `docs`, `feat`, `fix`, and `test`.
 For a PR containing several commits, give the PR a title that describes the outcome rather than repeating every implementation detail. For example:
 
 ```text
-docs: publish a guide to automated release notes
+docs: published a guide on automated release notes [Automated Release Notes](docs/internal_release_notes.md)
 ```
 
 This is more useful in the release notes than a vague title such as `final changes` or `updates`.
-
-## Run the workflow manually
-
-To run the workflow outside its normal schedule:
-
-1. Open the repository on GitHub.
-2. Select **Actions**.
-3. Select **Release Notes Cycle** from the workflow list.
-4. Select **Run workflow** and confirm the branch.
-5. Choose **Run workflow**.
-
-Use a manual run to retry a failed automation run or to archive the current entries before the next scheduled Tuesday run. A manual run uses weekly mode, so it creates the same weekly archive as the scheduled run.
-
-<img src="image-2.png" alt="Manual trigger" width="800">
 
 ## Troubleshooting
 
