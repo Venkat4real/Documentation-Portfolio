@@ -84,7 +84,7 @@ The automated release-note uses the **PR title**, not the individual commit mess
 Use this pattern where it fits:
 
 ```text
-type: concise description of the change : Article [link]
+type: concise description of the change
 ```
 
 Common types include `docs`, `feat`, `fix`, and `test`.
