@@ -4,7 +4,7 @@ title: Planned implementations
 description: This article displays the future implemetations in the document site.
 ---
 
-## Migratation of the CMS from Jelly to new layout
+## Migration of the CMS from Jelly to new layout
 
 In upcoming releases, the CMS layout will be migrated to a new layout.
 
