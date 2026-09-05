@@ -24,20 +24,29 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Setup Node.js
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: 'npm'
 
-      - name: Install Dependencies
-        run: npm install
+      - name: Install Node.js dependencies
+        run: npm ci
 
       - name: Build API Documentation
-        run: |
-          mkdir -p docs
-          node convert.js
+        run: npm run convert
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build --source docs --destination _site
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -45,7 +54,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './docs'
+          path: './_site'
 
       - name: Deploy to GitHub Pages
         id: deployment

@@ -3,37 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ page.title | default: site.title }}</title>
+    <title>{{ page.title | default: site.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description | escape }}" />
     <link rel="stylesheet" href="{{ '/assets/css/docs-style.css' | relative_url }}" />
   </head>
   <body>
-    <!-- {% include last-updated.html %} -->
     <div class="docs-shell">
       <header class="docs-header">
         <div class="brand">
           <a href="{{ '/' | relative_url }}">{{ site.title | default: 'Documentation' }}</a>
         </div>
         <div class="docs-header-meta">
-          <p>{{ site.description | default: 'Product documentation and release notes' }}</p>
+          <p>Technical Documentation</p>
         </div>
       </header>
 
       <div class="docs-body">
         <aside class="docs-sidebar">
-          <div class="sidebar-title">Documentation</div>
+          <div class="sidebar-title">Getting started</div>
           <nav class="sidebar-links">
-            <a href="{{ '/internal_release_notes.html' | relative_url }}">Internal Release Notes</a>
-            <a href="{{ '/User_guide.html' | relative_url }}">User Guide</a>
+            <a href="{{ '/' | relative_url }}">Home</a>
+            <a href="{{ '/release_notes.html' | relative_url }}">Release Notes</a>
+            <a href="{{ '/future_implementations.html' | relative_url }}">Future Plans</a>
+          </nav>
+          <div class="sidebar-title sidebar-section">Guides</div>
+          <nav class="sidebar-links">
+            <a href="{{ '/Joplin_User_guide.html' | relative_url }}">Joplin User Guide</a>
             <a href="{{ '/Joplin_Mobile_User_Guide.html' | relative_url }}">Mobile User Guide</a>
-            <a href="{{ '/opensource_contributions.html' | relative_url }}">Open Source Contributions</a>
+            <a href="{{ '/AI_automation/index.html' | relative_url }}">AI Writing Guides</a>
+          </nav>
+          <div class="sidebar-title sidebar-section">Reference</div>
+          <nav class="sidebar-links">
+            <a href="{{ '/API_Setup_User_Guide.html' | relative_url }}">API Setup</a>
             <a href="{{ '/api_reference.html' | relative_url }}">API Reference</a>
+            <a href="{{ '/technical-writing-resources.html' | relative_url }}">Writing Resources</a>
           </nav>
         </aside>
 
         <main class="docs-main">
           <article class="docs-article">
             <header class="docs-page-header">
-              <p class="page-category">Latest updates</p>
+              <p class="page-category">{{ page.category | default: 'Documentation' }}</p>
               <h1>{{ page.title | default: site.title }}</h1>
               {% if page.description %}
               <p class="page-description">{{ page.description }}</p>
@@ -43,6 +53,7 @@
             <section class="docs-content">
               {{ content }}
             </section>
+            {% include last-updated.html %}
           </article>
         </main>
       </div>

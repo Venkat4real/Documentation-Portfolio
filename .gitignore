@@ -1,4 +1,7 @@
 node_modules/
 clean_collection.json
+_site/
+.jekyll-cache/
+# Keep Gemfile.lock committed so local and CI builds resolve the same gems.
 # openapi.yaml # Keep if you want it tracked
 # convert.js # Keep if you want it tracked

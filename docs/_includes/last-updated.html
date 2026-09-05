@@ -1,3 +1,4 @@
 <div class="last-updated">
-  <small>Last updated: <time datetime="{{ page.last_modified_at | date: '%Y-%m-%dT%H:%M:%SZ' }}">{{ page.last_modified_at | date: '%B %d, %Y' }}</time></small>
+  {% assign updated_at = page.last_modified_at | default: site.time %}
+  <small>Last updated: <time datetime="{{ updated_at | date_to_xmlschema }}">{{ updated_at | date: '%B %d, %Y' }}</time></small>
 </div>
