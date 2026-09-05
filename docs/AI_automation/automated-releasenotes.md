@@ -81,6 +81,8 @@ If no PR entries have been added since the previous archive, the weekly run make
 
 The automated release-note uses the **PR title**, not the individual commit messages. Write the PR title as a concise, reader-friendly summary of the change. Clear commit messages are still valuable for code review and troubleshooting, and using a consistent style makes both easier to scan.
 
+This is only applicable for Internal release notes.
+
 Use this pattern where it fits:
 
 ```text
