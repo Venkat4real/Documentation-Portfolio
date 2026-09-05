@@ -9,7 +9,7 @@ description: Keep up with the latest product updates, releases, and feature enha
 > Every Tuesday, the current week's updates are grouped into a weekly release section.
 
 ## Auto-generated release notes
-- **[#28](https://github.com/Venkat4real/Documentation-Portfolio/pull/28)** - Updated internal release notes *by @Venkat4real, merged 2026-09-05.* - [View article: automated-releasenotes](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/automated-releasenotes.md) - [View article: future_implementations](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/future_implementations.md)
+- **[#28](https://github.com/Venkat4real/Documentation-Portfolio/pull/28)** - Updated internal release notes guide  and added a new article for future implementations *by @Venkat4real, merged 2026-09-05.* - [View article: automated-releasenotes](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/automated-releasenotes.md) - [View article: future_implementations](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/future_implementations.md)
 ## Release Update - Week of 2026-08-25 to 2026-09-01
 
 - **[#27](https://github.com/Venkat4real/Documentation-Portfolio/pull/27)** - Updated the guide on the release notes (release note) [https://venkat4real.github.io/Documentation-Portfolio/AI_automation/automated-releasenotes.html) *by @Venkat4real, merged 2026-08-30.* - [View article: automated-releasenotes](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/automated-releasenotes.md)
