@@ -1,8 +1,8 @@
 # Site settings
 title: Fried Notes
 description: Practical guides, release notes, and API references.
-url: "https://friednotes.com"
-baseurl: ""
+url: "https://venkat4real.github.io"
+baseurl: "/FriedNotes"
 lang: en
 
 # Build settings
