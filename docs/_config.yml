@@ -1,13 +1,24 @@
 # Site settings
-title: Documentation Portoflio
-description: Portfolio 
-baseurl: "/Documentation-Portfolio" # the subpath of your site, e.g. /blog
-url: "https://venkat4real.github.io/Documentation-Portfolio/" # the base hostname & protocol for your site, e.g. http://example.com
+title: Fried Notes
+description: Practical guides, release notes, and API references.
+url: "https://friednotes.com"
+baseurl: ""
+lang: en
 
 # Build settings
 markdown: kramdown
-theme: minima # You can choose a different Jekyll theme here
+theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-last-modified-at
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: docs
+
+exclude:
+  - readme.md

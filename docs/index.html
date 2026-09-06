@@ -1,66 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Documentation Home Page</title>
-    <link rel="stylesheet" href="./assets/css/docs-style.css" />
-  </head>
-  <body>
-    <div class="docs-shell">
-      <header class="docs-header">
-        <div class="brand"><a href="./">Fried Notes</a></div>
-        <div class="docs-header-meta">
-          <p>Documentation hub for release notes, guides, and API references.</p>
-        </div>
-      </header>
+---
+layout: docs
+title: Clear docs for complex software
+description: Practical guides, release notes, and API references for developers and technical writers.
+category: Documentation portfolio
+---
 
-      <div class="docs-body">
-        <aside class="docs-sidebar">
-          <div class="sidebar-title">Documentation</div>
-          <nav class="sidebar-links">
-            <a href="./internal_release_notes.html">Internal Release Notes</a>
-            <a href="./Joplin_User_guide.html">User Guide</a>
-            <a href="./Joplin_Mobile_User_Guide.html">Mobile User Guide</a>
-            <a href="./opensource_contributions.html">Open Source Contributions</a>
-            <a href="./api_reference.html">API Reference</a>
-            <a href="./technical-writing-resources.html">Technical writing resources</a>
-            <a href="./AI_automation/index.html">AI Guides</a>
-          </nav>
-        </aside>
+Practical guides and API references for developers, integrators, and technical writers.
 
-        <main class="docs-main">
-          <article class="docs-article">
-            <header class="docs-page-header">
-              <p class="page-category">Overview</p>
-              <h1>Documentation Home</h1>
-              <p class="page-description">Browse the latest release notes, user guides, and API documentation for Fried Notes.</p>
-            </header>
-            <section class="docs-content">
-              <p>Welcome to Venkat's documentation samples. Click on the links to display the respective document.</p>
-              <ul>
-                <li><strong><a href="./release_notes.html">Release Notes</a></strong> - See the latest updates and feature changelog.</li>
-                <li><strong><a href="./internal_release_notes.html">Internal Release Notes</a></strong> - See the latest updates and feature changelog.</li>
-                <li><strong><a href="./future_implementations.html">Future Implementations</a></strong> - See the planned features and enhancements.</li>
+<div class="doc-grid">
+  <section class="doc-card">
+    <h2>Release Notes</h2>
+    <p>Review customer-facing updates and the internal automated release log.</p>
+    <a href="{{ '/release_notes.html' | relative_url }}">Browse release notes →</a>
+  </section>
+  <section class="doc-card">
+    <h2>User Guides</h2>
+    <p>Step-by-step desktop and mobile guides for using Joplin.</p>
+    <a href="{{ '/Joplin_User_guide.html' | relative_url }}">Browse user guides →</a>
+  </section>
+  <section class="doc-card">
+    <h2>API Reference</h2>
+    <p>Explore the generated OpenAPI reference and its setup guide.</p>
+    <a href="{{ '/api_reference.html' | relative_url }}">View API reference →</a>
+  </section>
+</div>
 
-                <!--
-                <li><strong><a href="./Joplin_User_guide.html">Joplin User Guide</a></strong> - Learn how to use the Joplin note-taking app.</li>
-                <li><strong><a href="./Joplin_Mobile_User_Guide.html">Mobile User Guide</a></strong> - Learn how to use the mobile app and sync notes.</li> -->
+## Explore the documentation
 
-                <li><strong><a href="./opensource_contributions.html">Open Source Contributions</a></strong> - Review project contributions and fixes.</li>
-               
-               <!-- 
-                <li><strong><a href="./api_reference.html">API Reference</a></strong> - API documentation rendered with Redoc.</li> 
-                <li><strong><a href="./Mermaid_User_Guide.html">Mermaid User Guide</a></strong> - Mermaid User Guide.</li> -->
-
-                <li><strong><a href="./technical-writing-resources.html">Technical writing resources</a></strong> - Technical writing resources I follow.</li>
-                <li><strong><a href="./AI_automation/automated-releasenotes.html">Automated release notes</a></strong> - Automated release notes.</li>
-              
-              </ul>
-            </section>
-          </article>
-        </main>
-      </div>
-    </div>
-  </body>
-</html>
+- [Future implementations]({{ '/future_implementations.html' | relative_url }})
+- [AI and automation guides]({{ '/AI_automation/index.html' | relative_url }})
+- [Technical writing resources]({{ '/technical-writing-resources.html' | relative_url }})
+- [Open source contributions]({{ '/opensource_contributions.html' | relative_url }})

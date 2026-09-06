@@ -5,7 +5,7 @@ description: A guide for building and automating API documentation in the Fried 
 ---
 # Prompt library for technical writers: a DDLC-based approach
 
-> A companion article to [Using AI Agents for Technical Writing](./ai-agents-for-technical-writers.md), providing ready-to-use prompts mapped to each stage of the Documentation Development Life Cycle (DDLC).
+> A companion article to [Using AI Agents for Technical Writing](./Using_AI_Agents_for_Technical%20Writing.html), providing ready-to-use prompts mapped to each stage of the Documentation Development Life Cycle (DDLC).
 
 ---
 

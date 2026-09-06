@@ -5,7 +5,7 @@ description: A guide for building and automating API documentation in the Fried 
 ---
 # Running a local LLM in your terminal for technical writing
 
-> A companion guide to [Using AI Agents for Technical Writing](./ai-agents-for-technical-writers.md) and the [DDLC Prompt Library](./prompt-library-for-technical-writers.md). This guide covers installing a local LLM via [Ollama](https://ollama.com) and using it, entirely from the terminal, across the same DDLC stages.
+> A companion guide to [Using AI Agents for Technical Writing](./Using_AI_Agents_for_Technical%20Writing.html) and the [DDLC Prompt Library](./Prompt_Library.html). This guide covers installing a local LLM via [Ollama](https://ollama.com) and using it, entirely from the terminal, across the same DDLC stages.
 
 ---
 
@@ -30,7 +30,7 @@ description: A guide for building and automating API documentation in the Fried 
 Running a model on your own machine, instead of a hosted chat interface, matters for a few practical reasons specific to documentation work:
 
 - **Confidential source material.** If you're drafting from unreleased API specs, internal tickets, or proprietary code, a local model never sends that content off your machine.
-- **Scriptability.** A terminal LLM can be piped, chained, and dropped straight into a shell script or CI job—the same review prompts from the [prompt library](./prompt-library-for-technical-writers.md) can run unattended.
+- **Scriptability.** A terminal LLM can be piped, chained, and dropped straight into a shell script or CI job—the same review prompts from the [prompt library](./Prompt_Library.html) can run unattended.
 - **No per-call cost.** Once downloaded, a local model runs for free, which matters if you're batch-processing an entire docs folder (for example, running Stage 3 self-review across 40 topics).
 - **Offline capability.** Useful for writers working with air-gapped or restricted environments.
 
@@ -134,7 +134,7 @@ cat draft.md | ollama run qwen3 "Rewrite this in active voice, imperative mood f
 
 ## Using the DDLC stages from the terminal
 
-Each stage from the [prompt library](./prompt-library-for-technical-writers.md) works the same way locally—the prompt content doesn't change, only how you invoke it.
+Each stage from the [prompt library](./Prompt_Library.html) works the same way locally—the prompt content doesn't change, only how you invoke it.
 
 ### Plan
 ```bash
@@ -170,7 +170,7 @@ git log --since="2 weeks ago" --pretty=format:"%s" | ollama run qwen3 "Draft cat
 
 ## Scripting it: a simple review pipeline
 
-Because it's just a terminal command, you can wrap the self-review stage into a script that runs across an entire docs folder—the same kind of audit described in the [broken cross-reference example](./ai-agents-for-technical-writers.md#core-use-cases), but for style and terminology instead of links:
+Because it's just a terminal command, you can wrap the self-review stage into a script that runs across an entire docs folder—the same kind of audit described in the [broken cross-reference example](./Using_AI_Agents_for_Technical%20Writing.html#core-use-cases), but for style and terminology instead of links:
 
 ```bash
 #!/usr/bin/env bash

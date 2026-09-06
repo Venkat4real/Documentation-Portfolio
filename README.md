@@ -43,11 +43,13 @@ If you are looking for a technical writer who speaks fluent developer, let's con
 Run the following commands:
 
 ```sh
-cd docs
-jekyll serve
+bundle install
+npm install
+npm run convert
+bundle exec jekyll serve --source docs
 ```
 
-Open http://localhost:3000 in a web browser.
+Open http://127.0.0.1:4000 in a web browser.
 
 The following screen is displayed:
 ![local repo](image.png)

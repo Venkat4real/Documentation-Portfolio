@@ -80,6 +80,10 @@ a:hover {
   margin-bottom: 16px;
 }
 
+.sidebar-section {
+  margin-top: 28px;
+}
+
 .sidebar-links {
   display: grid;
   gap: 12px;
@@ -215,6 +219,37 @@ a:hover {
 .docs-content img {
   max-width: 100%;
   border-radius: 18px;
+}
+
+.last-updated {
+  border-top: 1px solid #e5e7eb;
+  color: #6b7280;
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+}
+
+.docs-content .doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  list-style: none;
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.docs-content .doc-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.docs-content .doc-card h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.6rem;
+}
+
+.docs-content .doc-card p {
+  margin: 0 0 1rem;
 }
 
 @media (max-width: 980px) {
