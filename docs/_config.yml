@@ -1,7 +1,9 @@
 # Site settings
 title: Fried Notes
 description: Practical guides, release notes, and API references.
-url: "https://friednotes.com"
+# The Pages workflow supplies `baseurl` at build time so links work on both
+# the GitHub project URL and a custom domain.
+url: ""
 baseurl: ""
 lang: en
 
