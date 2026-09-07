@@ -45,11 +45,14 @@ jobs:
       - name: Build API Documentation
         run: npm run convert
 
-      - name: Build Jekyll site
-        run: bundle exec jekyll build --source docs --destination _site
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+      - name: Build Jekyll site
+        run: bundle exec jekyll build --source docs --destination _site --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
