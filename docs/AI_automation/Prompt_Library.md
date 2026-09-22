@@ -11,16 +11,16 @@ description: A guide for building and automating API documentation in the Fried 
 
 ## Table of contents
 
-- [Why Map Prompts to the DDLC](#why-map-prompts-to-the-ddlc)
-- [The DDLC at a Glance](#the-ddlc-at-a-glance)
-- [Stage 1: Planning & Research](#stage-1-planning--research)
-- [Stage 2: Drafting](#stage-2-drafting)
-- [Stage 3: Self-Review](#stage-3-self-review)
-- [Stage 4: QA / BA Review](#stage-4-qa--ba-review)
-- [Stage 5: Technical/Peer Review](#stage-5-technicalpeer-review)
-- [Stage 6: Publish & Maintain](#stage-6-publish--maintain)
-- [Prompt Design Principles](#prompt-design-principles)
-- [Quick-Reference Table](#quick-reference-table)
+-[Why Map Prompts to the DDLC](#why-map-prompts-to-the-ddlc)
+-[The DDLC at a Glance](#the-ddlc-at-a-glance)
+-[Stage 1: Planning & Research](#stage-1-planning--research)
+-[Stage 2: Drafting](#stage-2-drafting)
+-[Stage 3: Self-Review](#stage-3-self-review)
+-[Stage 4: QA / BA Review](#stage-4-qa--ba-review)
+-[Stage 5: Technical/Peer Review](#stage-5-technicalpeer-review)
+-[Stage 6: Publish & Maintain](#stage-6-publish--maintain)
+-[Prompt Design Principles](#prompt-design-principles)
+-[Quick-Reference Table](#quick-reference-table)
 
 ---
 
@@ -40,10 +40,10 @@ Plan → Draft → Self-Review → QA/BA Review → Technical/Peer Review → Pu
 ```
 
 Each stage below includes:
-- **Purpose** — what this stage is for
-- **AI's role** — the persona it should adopt
-- **Example prompt** — copy-paste starting point
-- **What to watch for** — where the output still needs a human check
+-**Purpose** — what this stage is for
+-**AI's role** — the persona it should adopt
+-**Example prompt** — copy-paste starting point
+-**What to watch for** — where the output still needs a human check
 
 ---
 
@@ -84,18 +84,18 @@ You are drafting a task-based documentation topic for a developer audience,
 following [style guide name, e.g., Google Developer Documentation Style Guide].
 
 Structure:
-- H1 title
-- One-sentence introduction
-- "Before you begin" (prerequisite list)
-- Numbered steps (imperative mood, one action per step)
-- "Verify" section (how the reader confirms success)
-- "Troubleshooting" section (2-3 likely failure points)
+-H1 title
+-One-sentence introduction
+-"Before you begin" (prerequisite list)
+-Numbered steps (imperative mood, one action per step)
+-"Verify" section (how the reader confirms success)
+-"Troubleshooting" section (2-3 likely failure points)
 
 Constraints:
-- Do not invent flag names, defaults, or output examples. If something isn't
+-Do not invent flag names, defaults, or output examples. If something isn't
   in the source material, write [NEEDS INPUT: describe what's missing]
   instead of guessing.
-- Match the terminology in the attached glossary exactly.
+-Match the terminology in the attached glossary exactly.
 
 Source material:
 [paste verified spec/code/ticket]
@@ -119,14 +119,14 @@ Glossary:
 Review the following draft against our style guide and terminology list
 (both attached). Do not rewrite the topic. Instead, output a numbered list
 of issues, each with:
-- Line/section reference
-- Issue category (style / terminology / structure / clarity / passive voice)
-- Suggested fix (one sentence)
+-Line/section reference
+-Issue category (style / terminology / structure / clarity / passive voice)
+-Suggested fix (one sentence)
 
 Also flag:
-- Any sentence over 25 words
-- Any step that isn't in imperative mood
-- Any place where a term from the glossary is used inconsistently
+-Any sentence over 25 words
+-Any step that isn't in imperative mood
+-Any place where a term from the glossary is used inconsistently
 
 Draft:
 [paste draft]
@@ -155,10 +155,10 @@ instructions exactly as written, step by step, and narrate what you would
 do and what you would expect to see at each step.
 
 Flag anything where:
-- A step assumes knowledge or a prior action that wasn't stated
-- The expected result isn't specified, so you wouldn't know if it worked
-- Two steps could be interpreted as being in the wrong order
-- An edge case or error path is unaddressed
+-A step assumes knowledge or a prior action that wasn't stated
+-The expected result isn't specified, so you wouldn't know if it worked
+-Two steps could be interpreted as being in the wrong order
+-An edge case or error path is unaddressed
 
 Do not fix the draft. Just narrate your attempt and list blocking issues.
 
@@ -202,15 +202,15 @@ trust any claim that isn't directly supported by the attached source
 material (code, API spec, or logs).
 
 For each claim in the draft:
-- If it's directly supported by the source, mark it ✅
-- If it's plausible but not directly confirmed by the source, mark it ⚠️
+-If it's directly supported by the source, mark it ✅
+-If it's plausible but not directly confirmed by the source, mark it ⚠️
   and explain what would need to be verified
-- If it contradicts the source, mark it ❌ and explain the contradiction
+-If it contradicts the source, mark it ❌ and explain the contradiction
 
 Also check:
-- Every command/flag/parameter name against the source, character-for-character
-- Every claimed default value against the source
-- Whether any step sequence in the draft could break a real dependency
+-Every command/flag/parameter name against the source, character-for-character
+-Every claimed default value against the source
+-Whether any step sequence in the draft could break a real dependency
 
 Draft:
 [paste draft]
@@ -234,9 +234,9 @@ Source material:
 Compare this published documentation topic against the current API
 response / CLI output / config schema below. List every place where the
 documentation is out of date, including:
-- Renamed or removed parameters
-- Changed default values
-- New required steps not reflected in the docs
+-Renamed or removed parameters
+-Changed default values
+-New required steps not reflected in the docs
 
 Published topic:
 [paste current doc]

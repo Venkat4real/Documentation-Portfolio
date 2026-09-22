@@ -1,15 +1,13 @@
 ---
 layout: docs
 title: AI and Automation Index
-description: This page lists AI and automation projects.
+description: This document explains the how to install and use OpenAI Codex in Windows terminal.
 ---
-# Use OpenAI Codex in the Terminal and Push Code to GitHub
+# OpenAI Codex in the Terminal
 
-## Overview
+This guide explains how to install and use OpenAI Codex from the terminal.
 
-This guide explains how to install, sign in to, and use OpenAI Codex from the terminal.
-
-<img src="image-3.png" alt="Codex_in_terminal" width="400">
+<img src="image-3.png" alt="Codexinterminal" width="400">
 
 ------------------------------------------------------------------------
 
@@ -48,13 +46,13 @@ Verify the installation.
 codex --version
 ```
 
-Expected result:
+Result:
 
 The terminal displays the installed version.
 
 ------------------------------------------------------------------------
 
-## Sign in
+## Sign In
 
 If the CLI supports interactive authentication:
 
@@ -115,7 +113,7 @@ Resolve issues before committing.
 
 ## Push Your Changes to GitHub
 
-After you review your changes and verify that your code works as expected, you can push your changes to your GitHub repository by using your team's standard Git workflow.
+After you review your changes and verify that your code works as expected, you can push your changes to your GitHub Repository by using your team's standard Git workflow.
 
 For more information about working with Git and GitHub, see your organization's documentation or the GitHub documentation.
 
@@ -126,7 +124,7 @@ For more information about working with Git and GitHub, see your organization's 
   | Command not found | Verify installation and PATH |
   | Authentication failed | Verify your API key or sign in again |
   | Push rejected | Pull the latest changes, resolve conflicts and push again |
-  | Permission denied | Verify repository permissions and remote URL |
+  | Permission denied | Verify Repository permissions and remote URL |
 
 ------------------------------------------------------------------------
 
