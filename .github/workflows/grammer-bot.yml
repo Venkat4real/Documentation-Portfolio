@@ -2,6 +2,8 @@ name: Grammar Check
 on:
   pull_request:
     types: [opened, synchronize, edited]
+    
+  workflow_dispatch:
 
 jobs:
   vale:
