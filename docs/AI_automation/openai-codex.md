@@ -7,7 +7,7 @@ description: This document explains the how to install and use OpenAI Codex in W
 
 This guide explains how to install and use OpenAI Codex from the terminal.
 
-<img src="image-3.png" alt="Codexinterminal" width="400">
+<img src="image-3.png" alt="Codex in terminal" width="400">
 
 ------------------------------------------------------------------------
 

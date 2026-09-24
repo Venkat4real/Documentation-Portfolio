@@ -14,7 +14,7 @@ Joplin is an open-source note-taking and personal knowledge management applicati
 
 - Visit <https://joplinapp.org> and download the latest version for Windows.
 
-> Note: Alternatively, install from the command line for desktop builds or use the portable app when available. For open source development, the repository is available at <https://github.com/joplinapp/joplin>.
+> Note: Alternatively, install from the command line for desktop builds or use the portable app when available. For open source development, the Repository is available at <https://github.com/joplinapp/joplin>.
 
 #### Windows installation
 

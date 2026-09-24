@@ -5,7 +5,7 @@ description: A guide for building and automating API documentation in the Fried 
 ---
 # Running a local LLM in your terminal for technical writing
 
-> A companion guide to [Using AI Agents for Technical Writing](./Using_AI_Agents_for_Technical%20Writing.html) and the [DDLC Prompt Library](./Prompt_Library.html). This guide covers installing a local LLM via [Ollama](https://ollama.com) and using it, entirely from the terminal, across the same DDLC stages.
+> A companion guide to [Using AI Agents for Technical Writing](./Using_AI_Agents_for_Technical%20Writing.html) and the [DDLC Prompt Library](./Prompt_Library.html). This guide covers installing a local LLM via [Ollama](https://Ollama.com) and using it, entirely from the terminal, across the same DDLC stages.
 
 ---
 
@@ -13,7 +13,7 @@ description: A guide for building and automating API documentation in the Fried 
 
 - [Why Run an LLM Locally](#why-run-an-llm-locally)
 - [Prerequisites](#prerequisites)
-- [Step 1: Install Ollama](#step-1-install-ollama)
+- [Step 1: Install Ollama](#step-1-install-Ollama)
 - [Step 2: Pull a Model](#step-2-pull-a-model)
 - [Step 3: Verify It Works](#step-3-verify-it-works)
 - [Step 4: Feed It Files, Not Just Chat](#step-4-feed-it-files-not-just-chat)
@@ -51,15 +51,15 @@ The tradeoff: local models (especially ones that fit on a laptop) are generally 
 
 **macOS / Linux:**
 ```bash
-curl -fsSL https://ollama.com/install.sh | sh
+curl -fsSL https://Ollama.com/install.sh | sh
 ```
 
 **Windows:**
-Download the installer from [ollama.com/download](https://ollama.com/download) and run it—this adds the `ollama` command to your PATH automatically.
+Download the installer from [Ollama.com/download](https://Ollama.com/download) and run it—this adds the `Ollama` command to your PATH automatically.
 
 **Verify the install:**
 ```bash
-ollama --version
+Ollama --version
 ```
 You should see a version number printed back.
 
@@ -72,19 +72,19 @@ On Linux, Ollama typically runs as a background service after install. On macOS/
 Ollama's library includes general-purpose and coding-focused models. For technical writing work, a solid general-purpose starting point:
 
 ```bash
-ollama pull qwen3
+Ollama pull qwen3
 ```
 
 Or, for a smaller footprint on modest hardware:
 ```bash
-ollama pull llama3.2:3b
+Ollama pull llama3.2:3b
 ```
 
-This downloads the model weights to `~/.ollama/models` (or `%USERPROFILE%\.ollama\models` on Windows). You only need to do this once per model.
+This downloads the model weights to `~/.Ollama/models` (or `%USERPROFILE%\.Ollama\models` on Windows). You only need to do this once per model.
 
 **Check what's installed:**
 ```bash
-ollama list
+Ollama list
 ```
 
 ---
@@ -93,14 +93,14 @@ ollama list
 
 Start an interactive session:
 ```bash
-ollama run qwen3
+Ollama run qwen3
 ```
 
 Type a prompt and press Enter. Exit with `/bye` or `Ctrl+C`.
 
 For non-interactive, single-shot use—the pattern you'll use most for documentation work—pipe input directly:
 ```bash
-echo "Summarize the purpose of a REST API rate limiter in two sentences." | ollama run qwen3
+echo "Summarize the purpose of a REST API rate limiter in two sentences." | Ollama run qwen3
 ```
 
 ---
@@ -111,12 +111,12 @@ The real value for documentation work is piping actual files into the model rath
 
 **Pipe a file as context, with an instruction prepended:**
 ```bash
-cat installation.md | ollama run qwen3 "Review the following Markdown doc for passive voice and sentences over 25 words. List issues only, don't rewrite:"
+cat installation.md | Ollama run qwen3 "Review the following Markdown doc for passive voice and sentences over 25 words. List issues only, don't rewrite:"
 ```
 
 **Use a heredoc to combine an instruction with a longer prompt cleanly:**
 ```bash
-ollama run qwen3 << 'EOF'
+Ollama run qwen3 << 'EOF'
 You are reviewing a documentation draft for terminology consistency.
 Terminology list: sign in (not "log in"), workspace (not "org" or "team").
 
@@ -127,7 +127,7 @@ EOF
 
 **Save the output to a file instead of printing to screen:**
 ```bash
-cat draft.md | ollama run qwen3 "Rewrite this in active voice, imperative mood for steps:" > draft-reviewed.md
+cat draft.md | Ollama run qwen3 "Rewrite this in active voice, imperative mood for steps:" > draft-reviewed.md
 ```
 
 ---
@@ -138,32 +138,32 @@ Each stage from the [prompt library](./Prompt_Library.html) works the same way l
 
 ### Plan
 ```bash
-cat feature-ticket.txt | ollama run qwen3 "You are helping plan a new documentation topic. Propose an outline (H2 headings only) and list any information gaps. Do not write prose yet."
+cat feature-ticket.txt | Ollama run qwen3 "You are helping plan a new documentation topic. Propose an outline (H2 headings only) and list any information gaps. Do not write prose yet."
 ```
 
 ### Draft
 ```bash
-cat api-spec.yaml | ollama run qwen3 "Draft a task-based topic from this API spec. Structure: H1, intro, Before you begin, numbered steps, Verify, Troubleshooting. Do not invent flag names or defaults not present in the spec — mark gaps as [NEEDS INPUT]." > draft.md
+cat api-spec.yaml | Ollama run qwen3 "Draft a task-based topic from this API spec. Structure: H1, intro, Before you begin, numbered steps, Verify, Troubleshooting. Do not invent flag names or defaults not present in the spec — mark gaps as [NEEDS INPUT]." > draft.md
 ```
 
 ### Self-review
 ```bash
-cat draft.md | ollama run qwen3 "Review this draft for style and structure only. Output a numbered issue list with line reference, category, and suggested fix. Do not rewrite." > self-review.md
+cat draft.md | Ollama run qwen3 "Review this draft for style and structure only. Output a numbered issue list with line reference, category, and suggested fix. Do not rewrite." > self-review.md
 ```
 
 ### QA/BA review
 ```bash
-cat draft.md | ollama run qwen3 "You are a QA engineer who has never seen this feature. Follow the steps exactly as written and narrate what you'd expect at each point. Flag any assumed knowledge or missing expected results." > qa-review.md
+cat draft.md | Ollama run qwen3 "You are a QA engineer who has never seen this feature. Follow the steps exactly as written and narrate what you'd expect at each point. Flag any assumed knowledge or missing expected results." > qa-review.md
 ```
 
 ### Technical/peer review
 ```bash
-cat draft.md source-code.py | ollama run qwen3 "Review every technical claim in the draft against the attached source. Mark each claim ✅ (confirmed), ⚠️ (unverifiable from source), or ❌ (contradicts source)." > tech-review.md
+cat draft.md source-code.py | Ollama run qwen3 "Review every technical claim in the draft against the attached source. Mark each claim ✅ (confirmed), ⚠️ (unverifiable from source), or ❌ (contradicts source)." > tech-review.md
 ```
 
 ### Publish/maintain
 ```bash
-git log --since="2 weeks ago" --pretty=format:"%s" | ollama run qwen3 "Draft categorized release notes (Added/Changed/Fixed/Deprecated) from these commit messages. Use plain, user-facing language." > release-notes.md
+git log --since="2 weeks ago" --pretty=format:"%s" | Ollama run qwen3 "Draft categorized release notes (Added/Changed/Fixed/Deprecated) from these commit messages. Use plain, user-facing language." > release-notes.md
 ```
 
 ---
@@ -182,7 +182,7 @@ PROMPT="Review this documentation file for style and structure issues only. Outp
 find ./docs -name "*.md" | while read -r file; do
   echo "Reviewing: $file"
   output_file="${file%.md}.review.md"
-  cat "$file" | ollama run "$MODEL" "$PROMPT" > "$output_file"
+  cat "$file" | Ollama run "$MODEL" "$PROMPT" > "$output_file"
 done
 
 echo "Done. Review files written alongside each source file."
@@ -204,10 +204,10 @@ This is the same principle the CI-integrated agent pattern uses—it's just runn
 |---|---|---|
 | General drafting/review, modest hardware | `llama3.2:3b` | Runs comfortably on 8 GB RAM |
 | General drafting/review, better hardware | `qwen3` | Stronger general reasoning, larger download |
-| Code-heavy content (API docs, SDKs) | a coding-oriented model such as `qwen2.5-coder` or similar from `ollama.com/library` | Better at reading source code accurately |
-| Very large context (long specs/whole repos) | check `ollama.com/library` for current large-context models, or use a `-cloud` tagged model if your hardware can't fit it locally | Hosted models run on Ollama's infrastructure rather than your machine—verify your organization's data policy before sending source material this way |
+| Code-heavy content (API docs, SDKs) | a coding-oriented model such as `qwen2.5-coder` or similar from `Ollama.com/library` | Better at reading source code accurately |
+| Very large context (long specs/whole repos) | check `Ollama.com/library` for current large-context models, or use a `-cloud` tagged model if your hardware can't fit it locally | Hosted models run on Ollama's infrastructure rather than your machine—verify your organization's data policy before sending source material this way |
 
-Check `ollama.com/library` for the current catalog, since available models change frequently.
+Check `Ollama.com/library` for the current catalog, since available models change frequently.
 
 ---
 
@@ -227,10 +227,10 @@ A practical split many writers land on: run the mechanical, high-volume stages (
 
 ## Troubleshooting
 
-- **`ollama: command not found`** — the install didn't add it to your PATH. On Linux it typically installs to `/usr/local/bin`; on macOS, `/usr/local/bin` or `/opt/homebrew/bin`. Run `which ollama` to check, or add the directory to your shell profile (`~/.zshrc`, `~/.bashrc`).
-- **Model runs very slowly / falls back to CPU**—run `ollama ps` and check the `PROCESSOR` column. If it's not 100% GPU, the model likely doesn't fit in your available VRAM; try a smaller model size (for example, `:3b` instead of `:8b`).
-- **Ran out of disk space mid-download** — models are large; check free space with `du -sh ~/.ollama/models` and remove unused models with `ollama rm <model-name>`.
-- **Want it accessible to a script or another app rather than typed interactively** — run `ollama serve` (usually automatic) and call the local API directly:
+- **`Ollama: command not found`** —the install didn't add it to your PATH. On Linux it typically installs to `/usr/local/bin`; on macOS, `/usr/local/bin` or `/opt/homebrew/bin`. Run `which Ollama` to check, or add the directory to your shell profile (`~/.zshrc`, `~/.bashrc`).
+- **Model runs very slowly / falls back to CPU**—run `Ollama ps` and check the `PROCESSOR` column. If it's not 100% GPU, the model likely doesn't fit in your available VRAM; try a smaller model size (for example, `:3b` instead of `:8b`).
+- **Ran out of disk space mid-download** — models are large; check free space with `du -sh ~/.Ollama/models` and remove unused models with `Ollama rm <model-name>`.
+- **Want it accessible to a script or another app rather than typed interactively** — run `Ollama serve` (usually automatic) and call the local API directly:
   ```bash
   curl http://localhost:11434/api/generate -d '{
     "model": "qwen3",
