@@ -1,9 +1,13 @@
 ---
 layout: docs
+
 title: AI and Automation Index
+
 description: This document explains the how to install and use OpenAI Codex in Windows terminal.
+
 ---
-# OpenAI Codex in the Terminal
+
+# OpenAI Codex in the terminal
 
 This guide explains how to install and use OpenAI Codex from the terminal.
 
@@ -27,113 +31,5 @@ Verify your tools:
 
 ```bash
 git --version
+
 node --version
-```
-
-------------------------------------------------------------------------
-
-## Install Codex
-
-Install the CLI.
-
-```bash
-npm install -g @openai/codex
-```
-
-Verify the installation.
-
-```bash
-codex --version
-```
-
-Result:
-
-The terminal displays the installed version.
-
-------------------------------------------------------------------------
-
-## Sign In
-
-If the CLI supports interactive authentication:
-
-```bash
-codex login
-```
-
-After you run the login command, your default web browser opens.
-
-Sign in with your OpenAI account and complete the authentication process. When authentication succeeds, return to the terminal to continue.
-
-## Start Codex
-
-Open your project.
-
-```bash
-cd my-project
-codex
-```
-
-------------------------------------------------------------------------
-
-## Work with Codex
-
-Example prompts:
-
-``` text
-Explain this project.
-
-Add input validation.
-
-Fix failing tests.
-
-Generate test case.
-```
-
-Review every proposed change before accepting it.
-
-------------------------------------------------------------------------
-
-## Test Your Changes
-
-Run your project's tests.
-
-```bash
-npm test
-```
-
-or
-
-```bash
-dotnet test
-```
-
-Resolve issues before committing.
-
-------------------------------------------------------------------------
-
-## Push Your Changes to GitHub
-
-After you review your changes and verify that your code works as expected, you can push your changes to your GitHub Repository by using your team's standard Git workflow.
-
-For more information about working with Git and GitHub, see your organization's documentation or the GitHub documentation.
-
-## Troubleshooting
-
-  | Issue | Resolution |
-  | --- | --- |
-  | Command not found | Verify installation and PATH |
-  | Authentication failed | Verify your API key or sign in again |
-  | Push rejected | Pull the latest changes, resolve conflicts and push again |
-  | Permission denied | Verify Repository permissions and remote URL |
-
-------------------------------------------------------------------------
-
-## Best Practices
-
-- Review generated code.
-- Run tests before every commit.
-- Use descriptive commit messages.
-- Keep commits small.
-- Never commit secrets.
-
-------------------------------------------------------------------------
