@@ -28,7 +28,7 @@ description: A guide for building and automating API documentation in the Fried 
 
 ## Why this guide exists
 
-Technical writers are increasingly expected to produce more content, in more formats, faster — without sacrificing accuracy. AI agents (LLM-based assistants that can read source material, generate drafts, and in some cases take multi-step actions) can absorb a meaningful share of the repetitive work, freeing writers to focus on structure, accuracy, and information architecture — the parts of the job that still require human judgment.
+Technical writers are increasingly expected to produce more content, in more formats, faster without sacrificing accuracy. AI agents (LLM-based assistants that can read source material, generate drafts, and in some cases take multi-step actions) can absorb a meaningful share of the repetitive work, freeing writers to focus on structure, accuracy, and information architecture —the parts of the job that still require human judgment.
 
 This guide is written for writers who work with structured content (DITA/XML, Markdown, or similar), publish to a Git-based repo, and want a repeatable, low-risk way to bring AI into their process.
 
@@ -42,8 +42,8 @@ There's a spectrum, and it matters which point on it you're using:
 |---|---|---|
 | **Chat assistant** | Answers one prompt at a time; no memory of your repo unless you paste content in | Rewriting a paragraph for clarity |
 | **IDE/CLI-integrated assistant** | Reads your local files, can propose edits, runs in your terminal or editor | Generating a first draft of a new topic from source code comments |
-| **Agentic tool** | Can plan multi-step tasks, call tools (search docs, run scripts, open files), and iterate without a prompt for every step | Auditing an entire docs folder for broken cross-references and fixing them |
-| **CI/CD-integrated agent** | Runs automatically on a trigger (e.g., a pull request) to check or generate content | Flagging outdated screenshots or version strings on every PR |
+| **Agent** | Can plan multi-step tasks, call tools (search docs, run scripts, open files), and iterate without a prompt for every step | Auditing an entire docs folder for broken cross-references and fixing them |
+| **CI/CD-integrated agent** | Runs automatically on a trigger (for example a pull request) to check or generate content | Flagging outdated screenshots or version strings on every PR |
 
 Most technical writing teams start with the first two and graduate to the third and fourth as trust and process maturity increase.
 
@@ -62,8 +62,8 @@ Research → Outline → Draft → Technical Review → Edit → Publish → Mai
 - **Draft**: Generating first-pass prose for procedures, API references, release notes, and troubleshooting guides.
 - **Technical Review**: AI can flag inconsistencies, but subject-matter accuracy still needs a human SME sign-off.
 - **Edit**: Style/tone conformance, terminology consistency, readability scoring.
-- **Publish**: Agentic tools can open pull requests, run linters, and check links as part of CI.
-- **Maintain**: Detecting drift between docs and source (e.g., a code sample referencing a deprecated flag).
+- **Publish**: Agent tools can open pull requests, run linters, and check links as part of CI.
+- **Maintain**: Detecting drift between docs and source (a code sample referencing a deprecated flag).
 
 ---
 
@@ -79,7 +79,7 @@ Agents are effective at mechanical conversions: DITA to Markdown, Markdown to st
 Point an agent at a diff, a set of merged pull requests, or a changelog file, and ask it to draft categorized release notes (Added / Changed / Fixed / Deprecated). This is one of the highest-ROI, lowest-risk use cases because the source of truth (the diff) is unambiguous.
 
 ### 4. Consistency and terminology audits
-Agents can scan an entire docs repo for inconsistent terminology (e.g., "sign in" vs. "log in"), inconsistent heading capitalization, or divergence from a style guide, and propose a diff.
+Agents can scan an entire docs repo for inconsistent terminology ("sign in" vs. "log in"), inconsistent heading capitalization, or divergence from a style guide, and propose a diff.
 
 ### 5. Localization prep and readability
 Agents can flag idioms, culturally specific references, or overly complex sentence structures that will complicate translation — before the content goes to a localization vendor.
@@ -88,7 +88,7 @@ Agents can flag idioms, culturally specific references, or overly complex senten
 Given a set of support tickets or error logs, an agent can draft candidate troubleshooting entries (symptom → cause → resolution), which a writer then verifies and slots into the existing troubleshooting guide.
 
 ### 7. PR-based documentation checks
-An agent wired into your CI pipeline can review a pull request that changes docs and check for broken links, missing alt text, inconsistent code block languages, or outdated version numbers — commenting directly on the PR.
+An agent wired into your CI pipeline can review a pull request that changes docs and check for broken links, missing alt text, inconsistent code block languages, or outdated version numbers —commenting directly on the PR.
 
 ---
 
@@ -96,7 +96,7 @@ An agent wired into your CI pipeline can review a pull request that changes docs
 
 A minimal, low-risk setup for a GitHub-hosted docs repo:
 
-1. **Keep source of truth in the repo.** Style guide, terminology list, and templates should live as Markdown files in the repo itself (e.g., `/docs/contributing/style-guide.md`). This lets you feed them directly to an agent as context.
+1. **Keep source of truth in the repo.** Style guide, terminology list, and templates should live as Markdown files in the repo itself (`/docs/contributing/style-guide.md`). This lets you feed them directly to an agent as context.
 2. **Use a scratch branch for AI-generated drafts.** Never let an agent commit directly to `main`. A common pattern:
    ```
    git checkout -b ai-draft/release-notes-v2.4
@@ -104,7 +104,7 @@ A minimal, low-risk setup for a GitHub-hosted docs repo:
 3. **Chunk the work.** Ask for one topic or one section at a time rather than "write the whole docs site." Smaller units are easier to fact-check and produce more consistent quality.
 4. **Require citations from source.** When asking an agent to draft from code or specs, explicitly instruct it to reference the specific function, endpoint, or file it drew from, so review is faster.
 5. **Route through the same PR review process as human-authored content.** AI-generated content is not exempt from technical review, editorial review, and link/build checks.
-6. **Log what was AI-assisted.** A simple convention — e.g., a front-matter flag `ai_assisted: true` or a note in the PR description — helps track quality over time and target audits.
+6. **Log what was AI-assisted.** A simple convention — a front-matter flag `ai_assisted: true` or a note in the PR description — helps track quality over time and target audits.
 
 ---
 
@@ -123,7 +123,7 @@ Source material: [paste API spec / code / ticket]
 **Ask for gaps, not just prose:**
 ```
 Based on this source material, list any information you need to write this
-topic accurately but that isn't provided (e.g., default values, error codes,
+topic accurately but that isn't provided (default values, error codes,
 minimum permissions). Don't guess — flag it.
 ```
 
@@ -134,7 +134,7 @@ Review this topic against our style guide (attached) and terminology list
 Don't rewrite the whole topic — just list the issues.
 ```
 
-**Constrain scope explicitly** to avoid an agent silently expanding or narrowing a task — e.g., "Only edit the 'Troubleshooting' section; do not modify any other section."
+**Constrain scope explicitly** to avoid an agent silently expanding or narrowing a task — "Only edit the 'Troubleshooting' section; do not modify any other section."
 
 ---
 
@@ -143,7 +143,7 @@ Don't rewrite the whole topic — just list the issues.
 Be deliberate about where you place trust:
 
 - **Fabricated specifics** — invented flag names, made-up default values, or plausible-but-wrong CLI output. Always verify against the actual source (code, API response, or a real terminal session), especially for anything with exact version numbers or command syntax.
-- **Confident wrong sequencing** — an agent may reorder steps in a procedure in a way that reads fine but breaks a real dependency (e.g., suggesting a config step before a required install step).
+- **Confident wrong sequencing** — an agent may reorder steps in a procedure in a way that reads fine but breaks a real dependency (suggesting a config step before a required install step).
 - **Style drift over long documents** — quality and voice consistency can degrade across a very long single output; chunking mitigates this.
 - **Stale training knowledge** — an agent's built-in knowledge of a specific product or API can be outdated; always ground it in the current source material rather than letting it draw from memory alone.
 - **Over-confident troubleshooting content** — causal claims ("this error is always caused by X") should be checked against actual support data, not accepted at face value.
@@ -172,8 +172,8 @@ This list is illustrative, not exhaustive, and the landscape moves quickly — e
 
 - **Chat/IDE assistants**: general-purpose LLM chat interfaces; IDE-integrated coding/docs assistants
 - **CLI/agentic coding tools**: terminal-based agents that can read a repo, propose diffs, and open pull requests
-- **CI-integrated bots**: GitHub Actions-based bots that review PRs for docs-specific issues (broken links, style violations, missing alt text)
-- **Structured-authoring plugins**: AI features embedded in DITA/CCMS tools or static-site generators (e.g., docs-as-code frameworks)
+- **CI-integrated bots**: GitHub Actions-based bots that review PR for docs-specific issues (broken links, style violations, missing alt text)
+- **Structured-authoring plugins**: AI features embedded in DITA/CCMS tools or static-site generators (docs-as-code frameworks)
 
 ---
 
@@ -184,7 +184,7 @@ To justify and refine an AI-assisted workflow, track:
 - **Time-to-first-draft** per topic type, before and after AI assistance
 - **Review cycle count** (does AI-assisted content need more or fewer review rounds?)
 - **Defect rate** — factual errors caught in review per 1,000 words, AI-assisted vs. fully human-authored
-- **Terminology/style consistency score** (automatable via linting)
+- **Terminology/style consistency score** (automate via linting)
 - **Coverage** — number of topics kept up to date per release cycle
 
 ---
