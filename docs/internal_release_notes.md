@@ -9,9 +9,14 @@ description: Keep up with the latest product updates, releases, and feature enha
 > Every Tuesday, the current week's updates are grouped into a weekly release section.
 
 ## Auto-generated release notes
+- This section receives automated updates
+
+## Release Update - Week of 2026-09-22 to 2026-09-29
+
 - **[#36](https://github.com/Venkat4real/Documentation-Portfolio/pull/36)** - Fixed typos *by @Venkat4real, merged 2026-09-27.* - [View article: automated-releasenotes](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/automated-releasenotes.md) - [View article: openai-codex](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/openai-codex.md) - [View article: vale](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/vale.md)
 - **[#35](https://github.com/Venkat4real/Documentation-Portfolio/pull/35)** - Updated vale with google style guide *by @Venkat4real, merged 2026-09-27.*
 - **[#34](https://github.com/Venkat4real/Documentation-Portfolio/pull/34)** - Ran valve and fixed grammar and typos for documents. *by @Venkat4real, merged 2026-09-27.* - [View article: Prompt_Library](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/Prompt_Library.md) - [View article: Running_a_Local_LLM_in_Your_Terminal_for_Technical_Writing](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/Running_a_Local_LLM_in_Your_Terminal_for_Technical_Writing.md) - [View article: Using_AI_Agents_for_Technical Writing](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/Using_AI_Agents_for_Technical%20Writing.md) - [View article: automated-releasenotes](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/automated-releasenotes.md) - [View article: openai-codex](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/openai-codex.md) - [View article: Joplin_User_guide](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/Joplin_User_guide.md) - [View article: future_implementations](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/future_implementations.md) - [View article: technical-writing-resources](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/technical-writing-resources.md)
+
 ## Release Update - Week of 2026-09-15 to 2026-09-22
 
 - **[#33](https://github.com/Venkat4real/Documentation-Portfolio/pull/33)** - Added x86_64-linux platform support to Gemfile.lock *by @Venkat4real, merged 2026-09-15.*
