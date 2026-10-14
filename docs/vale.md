@@ -1,57 +1,125 @@
-# How to Run Vale Grammar and Style Checks Locally
+---
+layout: docs
+title: Run Vale Before Pushing Documentation to GitHub
+description: Install Vale, lint documentation locally, and resolve checks before merging a pull request.
+category: Documentation tools
+---
+Vale is a command-line prose linter that checks documentation against grammar and style rules. Users can run it locally before pushing changes, and this repository's CI/CD workflow runs Vale through GitHub Actions when a pull request is opened or updated. If Vale reports errors, the workflow check fails; when that check is required for the repository, the pull request cannot be merged until the errors are fixed. Vale's results depend on the rules configured for the repository, and its findings still need human review.
 
-Good documentation is not only about clear technical content. Consistent grammar, terminology, punctuation, and writing style are equally important.
+## How this repository uses Vale
 
-When documentation grows across multiple pages and contributors, manually reviewing every sentence becomes difficult. **Vale** helps solve this problem by automatically checking documentation against a defined set of grammar and style rules.
+This repository configures Vale in the root `.vale.ini` file. Markdown files are checked against the built-in Vale rules and the Google Developer Documentation Style Guide. The project vocabulary in `.vale/styles/config/vocabularies/FriedNotes/accept.txt` allows project-specific terms such as `Ollama` and `Redoc`.
 
-This article explains what Vale is, why it is useful for technical writers, and how to run Vale locally against your documentation.
+This repository's CI/CD workflow uses GitHub Actions to run Vale on the `docs` directory when a pull request is opened or updated. The workflow is defined in `.github/workflows/grammer-bot.yml`. Running Vale locally before pushing lets you see and fix findings earlier.
 
-## What is Vale?
+> **Note:** Pushing a branch with no open pull request does not trigger the Vale workflow. Pushing new commits to a branch with an open pull request updates the pull request and triggers the workflow.
 
-[Vale](https://vale.sh/) is an open-source prose linter. It works similarly to a code linter, but instead of checking source code, it checks **prose**.
+## Install Vale
 
-Vale can identify issues such as:a
+Install the Vale command-line tool using a package manager for your operating system, or follow the [official installation instructions](https://vale.sh/docs/vale-cli/installation/). For example:
 
-- Grammar and spelling problems
-- Inconsistent terminology
-- Passive voice
-- Complex or unclear sentences
-- Incorrect capitalization
-- Unwanted words and phrases
-- Punctuation issues
-- Violations of an organization's writing style
+```sh
+# Windows with Chocolatey
+choco install vale
 
-For example, a style guide might require writers to use **"sign in"** instead of **"login"** when describing an action.
+# Debian or Ubuntu (if Vale is available in your configured package sources)
+sudo apt install vale
+```
 
-Vale can automatically detect these inconsistencies and report them before documentation is published.
+Open a new terminal if needed, then confirm that Vale is available:
 
-## Why Use Vale for Technical Documentation?
+```sh
+vale --version
+```
 
-Technical documentation is often written by multiple people. Without automated style checks, different contributors may use different terminology or writing styles.
+## Open a terminal at the repository root
 
-For example, one page might say:
+Vale looks for `.vale.ini` as it checks files. Run the commands from the root of your clone, where that configuration file is located:
 
-> Click the button to log in.
+```sh
+cd path/to/Documentation-Portfolio
+```
 
-Another page might say:
+If you are following this guide in another repository, use that repository's root directory instead.
 
-> Click the button to login.
+## Download or update the configured styles
 
-Both sentences may be understandable, but inconsistent terminology can make documentation feel less polished.
+Run this once after installing Vale, and again when the repository changes its style configuration:
 
-Vale allows teams to encode these writing preferences as rules and apply them consistently across the documentation.
+```sh
+vale sync
+```
 
-A typical documentation workflow might look like this:
+This syncs the style packages configured for the project. It requires an internet connection.
+
+## Check your changed documentation
+
+To check all Markdown files in this repository's documentation folder, run:
+
+```sh
+vale docs
+```
+
+To check one file, pass its path instead:
+
+```sh
+vale docs/vale.md
+```
+
+Vale prints findings with the file name, line and column, a message, and the rule that produced the finding. A finding might look like this:
 
 ```text
-Write documentation
-       ↓
-Run Vale locally
-       ↓
-Fix grammar/style issues
-       ↓
-Commit changes
-       ↓
-CI runs Vale
-       ↓
-Publish documentation
+docs/example.md:12:8: Use 'sign in' instead of 'login'. Google.Words
+```
+
+Here, `Google.Words` identifies the style rule. Find the corresponding sentence, decide whether the suggestion fits its meaning, and revise the text when appropriate. Run Vale again to confirm that the finding is resolved.
+
+## Fix findings
+
+Vale suggestions are guidance, not automatic edits. Read each sentence in context. Fix genuine errors and follow the project's style where it makes sense. If a valid technical term is reported as a spelling issue, check whether it belongs in the project vocabulary before adding it; do not change accurate content just to silence a warning.
+
+For each finding, use the reported file, line, and rule to locate the sentence. Correct the writing when the rule's suggestion fits. Then run Vale again on the file or directory to verify the change:
+
+```sh
+vale docs/your-file.md
+```
+
+If you think a finding is incorrect, review the rule and the sentence in context. Keep accurate technical content. For a valid project term that Vale repeatedly flags, propose adding it to the project vocabulary. If a finding remains unresolved, explain why in your pull request so reviewers can assess it.
+
+## Push your branch and open or update a pull request
+
+Once you have reviewed the results, inspect and commit your changes:
+
+```sh
+git diff
+git status
+git add docs/your-file.md
+git commit -m "docs: describe your change"
+git push
+```
+
+Replace `docs/your-file.md` with the path to the file you changed. If you work on a branch, push that branch and open or update its pull request. The GitHub Actions Vale check will run there as well.
+
+Pushing a branch does not, by itself, make this Vale CI/CD workflow run. The GitHub Actions workflow runs when a pull request is opened or updated (and can also be started manually). When it runs, the action is configured with `fail_on_error: true`; a failing Vale check appears in the pull request's checks. GitHub can block merging on that failure if the repository requires the check in its branch protection rules.
+
+If the check fails, open the failed **Grammar Check** workflow from the pull request's **Checks** tab. Review its Vale annotations or log to find the file, line, and rule. Fix the relevant text locally, rerun Vale, then commit and push the fix to the same branch. The updated pull request triggers the check again. Once the required checks pass and the review requirements are met, use the pull request's **Merge** button to merge it.
+
+## Troubleshooting
+
+### `vale` is not recognized or not found
+
+The installation directory may not be on your `PATH`, or the terminal may need to be restarted. Verify the installation and try `vale --version` again.
+
+### Vale cannot find a style
+
+Run `vale sync` from the repository root, then rerun the check. Confirm that `.vale.ini` is present and that you are using the intended repository configuration.
+
+### A correct term is flagged
+
+Vale does not know every product name, acronym, or project-specific term. Check the rule and project vocabulary; if the term is valid and should be accepted consistently, propose adding it to the vocabulary rather than suppressing a finding without context.
+
+## Further reading
+
+- [Vale documentation](https://vale.sh/docs/)
+- [Vale installation instructions](https://vale.sh/docs/vale-cli/installation/)
+- [Google Developer Documentation Style Guide](https://developers.google.com/style)
