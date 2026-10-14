@@ -4,21 +4,24 @@ title: Run Vale Before Pushing Documentation to GitHub
 description: Install Vale, lint documentation locally, and resolve checks before merging a pull request.
 category: Documentation tools
 ---
-Vale is a command-line prose linter that checks documentation against grammar and style rules. Users can run it locally before pushing changes, and this repository's CI/CD workflow runs Vale through GitHub Actions when a pull request is opened or updated. If Vale reports errors, the workflow check fails; when that check is required for the repository, the pull request cannot be merged until the errors are fixed. Vale's results depend on the rules configured for the repository, and its findings still need human review.
+Vale is a command-line prose linter. It checks writing against style rules. Use it while editing documentation to catch style and terminology issues before you commit and push your changes.
+
+Vale is configurable, so its results depend on the rules enabled by each repository. It can flag grammar and style patterns, but it does not replace a human review or guarantee that every sentence is correct.
 
 ## How this repository uses Vale
 
 This repository configures Vale in the root `.vale.ini` file. Markdown files are checked against the built-in Vale rules and the Google Developer Documentation Style Guide. The project vocabulary in `.vale/styles/config/vocabularies/FriedNotes/accept.txt` allows project-specific terms such as `Ollama` and `Redoc`.
 
-This repository's CI/CD workflow uses GitHub Actions to run Vale on the `docs` directory when a pull request is opened or updated. The workflow is defined in `.github/workflows/grammer-bot.yml`. Running Vale locally before pushing lets you see and fix findings earlier.
+The GitHub Actions workflow in `.github/workflows/grammer-bot.yml` runs Vale on the `docs` directory when a pull request is opened or updated. It is not configured to run on every branch push. Running Vale locally before pushing lets you see and fix findings earlier.
 
-> **Note:** Pushing a branch with no open pull request does not trigger the Vale workflow. Pushing new commits to a branch with an open pull request updates the pull request and triggers the workflow.
-
-## Install Vale
+## 1. Install Vale
 
 Install the Vale command-line tool using a package manager for your operating system, or follow the [official installation instructions](https://vale.sh/docs/vale-cli/installation/). For example:
 
 ```sh
+# macOS with Homebrew
+brew install vale
+
 # Windows with Chocolatey
 choco install vale
 
@@ -32,7 +35,7 @@ Open a new terminal if needed, then confirm that Vale is available:
 vale --version
 ```
 
-## Open a terminal at the repository root
+## 2. Open a terminal at the repository root
 
 Vale looks for `.vale.ini` as it checks files. Run the commands from the root of your clone, where that configuration file is located:
 
@@ -42,7 +45,7 @@ cd path/to/Documentation-Portfolio
 
 If you are following this guide in another repository, use that repository's root directory instead.
 
-## Download or update the configured styles
+## 3. Download or update the configured styles
 
 Run this once after installing Vale, and again when the repository changes its style configuration:
 
@@ -52,7 +55,7 @@ vale sync
 
 This syncs the style packages configured for the project. It requires an internet connection.
 
-## Check your changed documentation
+## 4. Check your changed documentation
 
 To check all Markdown files in this repository's documentation folder, run:
 
@@ -74,7 +77,7 @@ docs/example.md:12:8: Use 'sign in' instead of 'login'. Google.Words
 
 Here, `Google.Words` identifies the style rule. Find the corresponding sentence, decide whether the suggestion fits its meaning, and revise the text when appropriate. Run Vale again to confirm that the finding is resolved.
 
-## Fix findings
+## 5. Fix findings
 
 Vale suggestions are guidance, not automatic edits. Read each sentence in context. Fix genuine errors and follow the project's style where it makes sense. If a valid technical term is reported as a spelling issue, check whether it belongs in the project vocabulary before adding it; do not change accurate content just to silence a warning.
 
@@ -86,7 +89,7 @@ vale docs/your-file.md
 
 If you think a finding is incorrect, review the rule and the sentence in context. Keep accurate technical content. For a valid project term that Vale repeatedly flags, propose adding it to the project vocabulary. If a finding remains unresolved, explain why in your pull request so reviewers can assess it.
 
-## Push your branch and open or update a pull request
+## 6. Push your branch and open or update a pull request
 
 Once you have reviewed the results, inspect and commit your changes:
 
@@ -100,7 +103,7 @@ git push
 
 Replace `docs/your-file.md` with the path to the file you changed. If you work on a branch, push that branch and open or update its pull request. The GitHub Actions Vale check will run there as well.
 
-Pushing a branch does not, by itself, make this Vale CI/CD workflow run. The GitHub Actions workflow runs when a pull request is opened or updated (and can also be started manually). When it runs, the action is configured with `fail_on_error: true`; a failing Vale check appears in the pull request's checks. GitHub can block merging on that failure if the repository requires the check in its branch protection rules.
+Pushing a branch does not, by itself, make this Vale workflow run. The workflow runs when a pull request is opened or updated (and can also be started manually). When it runs, the action is configured with `fail_on_error: true`; a failing Vale check appears in the pull request's checks. GitHub can block merging on that failure if the repository requires the check in its branch protection rules.
 
 If the check fails, open the failed **Grammar Check** workflow from the pull request's **Checks** tab. Review its Vale annotations or log to find the file, line, and rule. Fix the relevant text locally, rerun Vale, then commit and push the fix to the same branch. The updated pull request triggers the check again. Once the required checks pass and the review requirements are met, use the pull request's **Merge** button to merge it.
 
