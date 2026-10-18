@@ -59,7 +59,37 @@
             {% include last-updated.html %}
           </article>
         </main>
+
+        <aside class="docs-toc" aria-label="On this page">
+          <h2>On this page</h2>
+          <nav aria-label="Section headings">
+            <ul class="docs-toc-links"></ul>
+          </nav>
+        </aside>
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const content = document.querySelector('.docs-content');
+        const toc = document.querySelector('.docs-toc');
+        const list = document.querySelector('.docs-toc-links');
+
+        if (!content || !toc || !list) return;
+
+        content.querySelectorAll('h2, h3').forEach((heading) => {
+          if (!heading.id) return;
+
+          const item = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = `#${heading.id}`;
+          link.textContent = heading.textContent;
+          if (heading.tagName === 'H3') item.classList.add('docs-toc-subheading');
+          item.appendChild(link);
+          list.appendChild(item);
+        });
+
+        if (list.children.length === 0) toc.hidden = true;
+      });
+    </script>
   </body>
 </html>
