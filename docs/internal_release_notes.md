@@ -13,16 +13,22 @@ description: Stay up to date with the latest product updates, releases, and feat
 
 ## Release Update - Week of 2026-09-22 to 2026-09-29
 
-- **[#36](https://github.com/Venkat4real/Documentation-Portfolio/pull/36)** - Fixed typos *by @Venkat4real, merged 2026-09-27.* - [View article: automated-releasenotes](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/automated-releasenotes.md) - [View article: openai-codex](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/openai-codex.md) - [View article: vale](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/vale.md)
+- **[#36](https://github.com/Venkat4real/Documentation-Portfolio/pull/36)** - Fixed typos *by @Venkat4real, merged 2026-09-27.* - [View article: automated-releasenotes](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/automated-releasenotes.md)
+
 - **[#35](https://github.com/Venkat4real/Documentation-Portfolio/pull/35)** - Updated vale with google style guide *by @Venkat4real, merged 2026-09-27.*
-- **[#34](https://github.com/Venkat4real/Documentation-Portfolio/pull/34)** - Ran valve and fixed grammar and typos for documents. *by @Venkat4real, merged 2026-09-27.* - [View article: Prompt_Library](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/Prompt_Library.md) - [View article: Running_a_Local_LLM_in_Your_Terminal_for_Technical_Writing](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/Running_a_Local_LLM_in_Your_Terminal_for_Technical_Writing.md) - [View article: Using_AI_Agents_for_Technical Writing](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/Using_AI_Agents_for_Technical%20Writing.md) - [View article: automated-releasenotes](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/automated-releasenotes.md) - [View article: openai-codex](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/openai-codex.md) - [View article: Joplin_User_guide](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/Joplin_User_guide.md) - [View article: future_implementations](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/future_implementations.md) - [View article: technical-writing-resources](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/technical-writing-resources.md)
+
+- **[#34](https://github.com/Venkat4real/Documentation-Portfolio/pull/34)** - Ran valve and fixed grammar and typos for documents. *by @Venkat4real, merged 2026-09-27.* - [View article: Prompt_Library](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/Prompt_Library.md)
 
 - **[#36](https://github.com/Venkat4real/Documentation-Portfolio/pull/36)** - Fixed typos *by @Venkat4real, merged 2026-09-27.* - [View article: automated-releasenotes](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/automated-releasenotes.md)
+
 - **[#35](https://github.com/Venkat4real/Documentation-Portfolio/pull/35)** - Updated Vale to follow the Google style guide. *by @Venkat4real, merged 2026-09-27.*
+
 - **[#34](https://github.com/Venkat4real/Documentation-Portfolio/pull/34)** - Ran Vale and corrected grammar and typos in the documents. *by @Venkat4real, merged 2026-09-27.* - [View article: Prompt_Library](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/Prompt_Library.md)
+
 ## Release Update - Week of 2026-09-15 to 2026-09-22
 
 - **[#33](https://github.com/Venkat4real/Documentation-Portfolio/pull/33)** - Added x86_64-linux platform support to Gemfile.lock *by @Venkat4real, merged 2026-09-15.*
+
 - **[#32](https://github.com/Venkat4real/Documentation-Portfolio/pull/32)** - Installed Ruby and added a Gemfile. *by @Venkat4real, merged 2026-09-15.*
 
 ## Release Update - Week of 2026-09-08 to 2026-09-15
@@ -32,12 +38,15 @@ description: Stay up to date with the latest product updates, releases, and feat
 ## Release Update - Week of 2026-09-01 to 2026-09-08
 
 - **[#30](https://github.com/Venkat4real/Documentation-Portfolio/pull/30)** - Updated the CMS site. *by @Venkat4real, merged 2026-09-07.*
+
 - **[#29](https://github.com/Venkat4real/Documentation-Portfolio/pull/29)** - Docs: configured the Jekyll site build. *by @Venkat4real, merged 2026-09-06.* - [View article: Prompt_Library](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/Prompt_Library.md)
+
 - **[#28](https://github.com/Venkat4real/Documentation-Portfolio/pull/28)** - Updated the internal release notes guide and added a new article about future implementations. *by @Venkat4real, merged 2026-09-05.* - [View article: automated-releasenotes](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/automated-releasenotes.md)
 
 ## Release Update - Week of 2026-08-25 to 2026-09-01
 
 - **[#27](https://github.com/Venkat4real/Documentation-Portfolio/pull/27)** - Updated the release notes guide. *by @Venkat4real, merged 2026-08-30.* - [View article: automated-releasenotes](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/automated-releasenotes.md)
+
 - **[#26](https://github.com/Venkat4real/Documentation-Portfolio/pull/26)** - Fixed image resolution for the manual trigger. *by @Venkat4real, merged 2026-08-26.* - [View article: automated-releasenotes](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/automated-releasenotes.md)
 - **[#25](https://github.com/Venkat4real/Documentation-Portfolio/pull/25)** - AI docs: revised the release notes guide. *by @Venkat4real, merged 2026-08-26.* - [View article: automated-releasenotes](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/automated-releasenotes.md)
 
