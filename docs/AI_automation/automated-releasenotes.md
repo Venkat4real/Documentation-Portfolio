@@ -43,3 +43,10 @@ For example, a merged PR titled `docs: Added troubleshooting steps for sign-in` 
 
 ```markdown
 - **[#42](https://github.com/OWNER/REPOSITORY/pull/42)** - docs: added troubleshooting steps for sign-in *by @octocat, merged 2026-08-16.*
+
+### How to write a commit message?
+
+Commit message also acts as the summary for internal release notes, so it should contain what file is changed, and what are the changes in the file.
+
+Example: Consider the Index.html/Home screen is updated with new changes for re design. Users can follow the summary bellow.
+'Porfolio home screen is enhanced with new UI changes, and Updated links for samples.'
