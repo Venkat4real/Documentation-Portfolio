@@ -9,6 +9,7 @@ description: Stay up to date with the latest product updates, releases, and feat
 > Every Tuesday, the current week's updates are grouped into a weekly release section.
 
 ## Auto-generated release notes
+- **[#38](https://github.com/Venkat4real/Documentation-Portfolio/pull/38)** - Open AI codex guide is updated with new workflow and test case's *by @Venkat4real, merged 2026-10-19.* - [View article: openai-codex](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/AI_automation/openai-codex.md)
 - **[#37](https://github.com/Venkat4real/Documentation-Portfolio/pull/37)** - Enhancements for Home screen UI and Layout of the portfolio *by @Venkat4real, merged 2026-10-19.*
 ## Release Update - Week of 2026-09-22 to 2026-09-29
 
