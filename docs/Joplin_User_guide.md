@@ -39,12 +39,13 @@ Joplin is an open-source note-taking and personal knowledge management applicati
 ### Create your first note
 
 1. Open Joplin.
-2. In the left sidebar, click the **New note** icon.
-<img src="./assets/joplin-windows-installer-Adding-new-note.png" alt="Joplin welcome screen" width="600" />
+2. At the top of the note list, click **New note**. An empty note opens in the editor.
 
-3. Enter your note. Its preview appears on the right side.
+   <img src="./assets/joplin-windows-installer-Adding-new-note.png" alt="Joplin with an empty new note open in the editor after clicking New note" width="600" />
 
-<img src="./assets/joplin-windows-installer-Added-new-note.png" alt="Joplin welcome screen" width="600" />
+3. Type your note in the editor on the left. Joplin uses the first line as the note title and saves your changes automatically. The preview on the right shows the formatted note.
+
+   <img src="./assets/joplin-windows-installer-Added-new-note.png" alt="Joplin showing a note titled Meeting notes in the editor, with its formatted preview on the right" width="600" />
 
 > Tip: Use notebooks to separate major contexts like projects, study, and personal notes.
 
