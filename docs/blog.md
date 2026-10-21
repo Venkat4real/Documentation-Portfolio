@@ -24,7 +24,9 @@ A guide that was correct at release slowly drifts away from the product. Keeping
 
 ## The test case
 
-I wanted to see whether an AI could test a user guide for me. I already had a guide for Joplin, so I asked Claude to read the guide and verify it against the current app.
+I wanted to see whether an AI could test a user guide for me. I already had a [user guide](https://venkat4real.github.io/Documentation-Portfolio/Joplin_User_guide.html) for [Joplin](https://joplinapp.org/), an open-source note-taking app, so I asked Claude to read the guide and verify it against the current app.
+
+> **Note:** The Joplin user guide is a work in progress and is not complete yet.
 
 It did.
 
