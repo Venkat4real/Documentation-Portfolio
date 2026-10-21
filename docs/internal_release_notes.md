@@ -9,8 +9,7 @@ description: Stay up to date with the latest product updates, releases, and feat
 > Every Tuesday, the current week's updates are grouped into a weekly release section.
 
 ## Auto-generated release notes
-- This section receives automated updates
-
+- **[#40](https://github.com/Venkat4real/Documentation-Portfolio/pull/40)** - Joplin pilot *by @Venkat4real, merged 2026-10-21.* - [View article: blog](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/blog.md)
 ## Release Update - Week of 2026-10-13 to 2026-10-20
 
 - **[#39](https://github.com/Venkat4real/Documentation-Portfolio/pull/39)** - Update "Create your first note" steps and screenshots for Joplin 3.6.14 - By Claude *by @Venkat4real, merged 2026-10-20.* - [View article: Joplin_User_guide](https://github.com/Venkat4real/Documentation-Portfolio/blob/main/docs/Joplin_User_guide.md)
