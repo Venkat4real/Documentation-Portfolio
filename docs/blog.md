@@ -1,5 +1,6 @@
 ---
 layout: docs
+permalink: /blog/index.html
 title: "Testing a User Guide with Claude Desktop: A Joplin Pilot"
 date: 2026-10-21
 category: AI-assisted docs
